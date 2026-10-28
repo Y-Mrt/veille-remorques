@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Veille remorques</title>
+  <meta name="description" content="Remorques porte-voiture ~2,5 t à moins de 2 500 € repérées sur Leboncoin, mises à jour matin et soir.">
+  <meta name="theme-color" content="#1C252C">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <h1>Remorques porte-voiture</h1>
+      <p class="crit">PTAC ~2,5 t, moins de 2 500 €, toute la France, distances depuis Sarlat-la-Canéda.</p>
+      <p class="status" id="status" aria-live="polite">Chargement des annonces…</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="reco" class="reco" hidden>
+      <h2>À regarder en priorité</h2>
+      <ul id="reco-list"></ul>
+    </section>
+
+    <form class="filters" id="filters" aria-label="Filtrer les annonces">
+      <fieldset class="seg">
+        <legend class="sr">Afficher</legend>
+        <label><input type="radio" name="vue" value="toutes" checked><span>Toutes</span></label>
+        <label><input type="radio" name="vue" value="nouvelles"><span>Nouvelles <b id="nb-new"></b></span></label>
+      </fieldset>
+      <label class="sel">Trier par
+        <select name="tri">
+          <option value="recent">Plus récentes</option>
+          <option value="prix">Prix croissant</option>
+          <option value="distance">Plus proches</option>
+        </select>
+      </label>
+      <label class="sel">Distance
+        <select name="dist">
+          <option value="0">Toute la France</option>
+          <option value="150">≤ 150 km</option>
+          <option value="300">≤ 300 km</option>
+          <option value="500">≤ 500 km</option>
+        </select>
+      </label>
+    </form>
+
+    <ol class="list" id="list"></ol>
+    <p class="empty" id="empty" hidden></p>
+
+    <details class="gone" id="gone" hidden>
+      <summary>Annonces retirées récemment (<span id="nb-gone"></span>)</summary>
+      <ol class="list list--gone" id="list-gone"></ol>
+    </details>
+  </main>
+
+  <footer class="wrap foot">
+    <p>Mise à jour automatique à 8 h 15 et 19 h 15. Seules les annonces dont le PTAC est indiqué, ou dont les deux essieux sont visibles sur les photos, sont listées.</p>
+    <p><a id="apk" href="#">Télécharger l'application Android</a></p>
+  </footer>
+
+  <template id="tpl">
+    <li class="ad">
+      <a class="ad__img" target="_blank" rel="noopener"><img alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+      <div class="ad__body">
+        <p class="ad__flag">Nouvelle</p>
+        <h3 class="ad__title"><a target="_blank" rel="noopener"></a></h3>
+        <p class="ad__price"></p>
+        <p class="ad__where"></p>
+        <div class="ad__plate"><span class="ad__plate-band">PTAC</span><span class="ad__plate-val"></span></div>
+        <p class="ad__src"></p>
+        <ul class="ad__specs"></ul>
+        <p class="ad__notes"></p>
+        <p class="ad__dates"></p>
+      </div>
+    </li>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>

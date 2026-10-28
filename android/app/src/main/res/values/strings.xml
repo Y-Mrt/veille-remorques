@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Remorques</string>
+    <string name="channel_name">Nouvelles annonces</string>
+    <string name="channel_desc">Prévient quand une nouvelle remorque porte-voiture est repérée</string>
+</resources>

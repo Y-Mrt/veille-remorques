@@ -1,0 +1,53 @@
+plugins {
+    id 'com.android.application'
+}
+
+def site = project.findProperty('siteUrl') ?: 'https://example.github.io/veille-remorques/'
+if (!site.endsWith('/')) site = site + '/'
+
+android {
+    namespace 'fr.veille.remorques'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'fr.veille.remorques'
+        minSdk 26
+        targetSdk 35
+        versionCode((System.getenv('GITHUB_RUN_NUMBER') ?: '1') as int)
+        versionName "1.0.${System.getenv('GITHUB_RUN_NUMBER') ?: '0'}"
+        buildConfigField 'String', 'SITE_URL', "\"${site}\""
+    }
+
+    signingConfigs {
+        release {
+            // Clé de signature propre à cette app personnelle : la même clé à chaque
+            // compilation permet d'installer les mises à jour par-dessus l'ancienne version.
+            storeFile file('../keystore/veille.jks')
+            storePassword 'veille-remorques'
+            keyAlias 'veille'
+            keyPassword 'veille-remorques'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+        }
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation 'androidx.annotation:annotation:1.9.1'
+    implementation 'androidx.work:work-runtime:2.9.1'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+}

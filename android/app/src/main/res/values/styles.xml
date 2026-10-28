@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ink">#1C252C</color>
+    <color name="amber">#F0A202</color>
+    <color name="steel">#DDE2E5</color>
+    <style name="AppTheme" parent="@android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/ink</item>
+        <item name="android:navigationBarColor">@color/ink</item>
+        <item name="android:windowBackground">@color/steel</item>
+        <item name="android:colorAccent">@color/amber</item>
+    </style>
+</resources>

@@ -1,0 +1,47 @@
+name: Compiler l'APK Android
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "android/**"
+      - ".github/workflows/apk.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: android-actions/setup-android@v3
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.11.1"
+
+      - name: Compiler
+        run: |
+          OWNER="${GITHUB_REPOSITORY_OWNER,,}"
+          REPO="${GITHUB_REPOSITORY#*/}"
+          if [ "$REPO" = "$OWNER.github.io" ]; then SITE="https://$OWNER.github.io/"; else SITE="https://$OWNER.github.io/$REPO/"; fi
+          echo "Adresse du site : $SITE"
+          gradle -p android assembleRelease -PsiteUrl="$SITE" --no-daemon
+          cp android/app/build/outputs/apk/release/app-release.apk veille-remorques.apk
+
+      - name: Publier la version
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: apk-${{ github.run_number }}
+          name: Application Android ${{ github.run_number }}
+          body: Installez veille-remorques.apk sur le téléphone (autoriser l'installation depuis le navigateur si Android le demande).
+          files: veille-remorques.apk
+          make_latest: true

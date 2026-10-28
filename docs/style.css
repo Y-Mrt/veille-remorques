@@ -1,0 +1,130 @@
+:root {
+  --bg: #DDE2E5;          /* tôle galvanisée */
+  --surface: #F6F7F8;
+  --ink: #1C252C;
+  --muted: #56636D;
+  --line: #C3CBD0;
+  --amber: #F0A202;       /* gyrophare de dépanneuse */
+  --amber-ink: #6B4700;
+  --plate: #1F4FA3;       /* bande bleue de plaque */
+  --plate-bg: #FFFFFF;
+  --ok: #2F6B3A;
+  --warn: #8A3B12;
+  --radius-img: 6px;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #151B20; --surface: #1E262D; --ink: #E6EBEE; --muted: #9AA7B1;
+    --line: #33404A; --amber-ink: #FFD27A; --plate-bg: #F2F4F5; --ok: #7BC489; --warn: #F2A07B;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #151B20; --surface: #1E262D; --ink: #E6EBEE; --muted: #9AA7B1;
+  --line: #33404A; --amber-ink: #FFD27A; --plate-bg: #F2F4F5; --ok: #7BC489; --warn: #F2A07B;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 400 16px/1.5 "Barlow", system-ui, sans-serif;
+}
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+
+/* En-tête */
+.top { background: var(--ink); color: var(--bg); padding: 28px 0 22px; border-bottom: 6px solid var(--amber); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .top { background: #0E1317; color: var(--ink); } }
+h1 {
+  margin: 0; font: 700 clamp(2rem, 7vw, 3.1rem)/1 "Barlow Condensed", sans-serif;
+  letter-spacing: -0.01em;
+}
+.crit { margin: 8px 0 0; opacity: .8; max-width: 60ch; }
+.status { margin: 14px 0 0; font-weight: 500; }
+.status.is-warn { color: var(--amber); }
+
+/* Recommandations */
+.reco { margin: 22px 0 0; padding: 14px 16px; background: var(--surface); border-left: 6px solid var(--amber); }
+.reco h2 { margin: 0 0 6px; font: 600 1.25rem/1.2 "Barlow Condensed", sans-serif; }
+.reco ul { margin: 0; padding-left: 1.1em; }
+.reco li + li { margin-top: 4px; }
+
+/* Filtres */
+.filters { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: end; margin: 22px 0 14px; }
+.seg { display: inline-flex; border: 0; padding: 0; margin: 0; background: var(--surface); border-radius: 999px; padding: 3px; }
+.seg label { position: relative; }
+.seg input { position: absolute; opacity: 0; inset: 0; }
+.seg span { display: block; padding: 6px 14px; border-radius: 999px; font-weight: 500; cursor: pointer; }
+.seg input:checked + span { background: var(--ink); color: var(--surface); }
+.seg input:focus-visible + span { outline: 3px solid var(--amber); }
+.seg b { font-weight: 600; color: var(--amber); }
+.sel { display: grid; gap: 2px; font-size: .85rem; color: var(--muted); }
+.sel select {
+  font: inherit; font-size: 1rem; color: var(--ink); background: var(--surface);
+  border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px;
+}
+
+/* Annonces */
+.list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.ad {
+  display: grid; grid-template-columns: 240px 1fr; gap: 0;
+  background: var(--surface); border-left: 6px solid transparent;
+}
+.ad.is-new { border-left-color: var(--amber); }
+.ad__img { display: block; background: var(--line); min-height: 160px; }
+.ad__img img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.ad__body { padding: 14px 16px 16px; display: grid; grid-template-columns: 1fr auto; column-gap: 12px; align-content: start; }
+.ad__body > * { grid-column: 1 / -1; margin: 0; }
+.ad__flag { color: var(--amber-ink); font-weight: 600; font-size: .9rem; display: none; }
+.is-new .ad__flag { display: block; }
+.ad__title { font: 600 1.2rem/1.2 "Barlow", sans-serif; }
+.ad__title a { text-decoration: none; }
+.ad__title a:hover { text-decoration: underline; }
+.ad__price {
+  grid-column: 1; margin-top: 6px;
+  font: 700 2.4rem/1 "Barlow Condensed", sans-serif; letter-spacing: -0.01em;
+}
+.ad__where { grid-column: 1; color: var(--muted); }
+.ad__plate {
+  grid-column: 2; grid-row: 3 / span 2; align-self: center;
+  display: inline-flex; align-items: stretch; height: 40px;
+  border: 2px solid #1C252C; border-radius: 5px; background: var(--plate-bg); color: #1C252C; overflow: hidden;
+}
+.ad__plate-band {
+  background: var(--plate); color: #fff; font: 600 .7rem/1 "Barlow Condensed", sans-serif;
+  writing-mode: vertical-rl; transform: rotate(180deg); padding: 0 4px; text-align: center;
+}
+.ad__plate-val { font: 700 1.5rem/36px "Barlow Condensed", sans-serif; padding: 0 10px; white-space: nowrap; }
+.ad__src { margin-top: 2px; font-size: .85rem; color: var(--muted); grid-column: 1 / -1; }
+.ad__specs { list-style: none; padding: 0; margin: 10px 0 0 !important; display: flex; flex-wrap: wrap; gap: 6px; }
+.ad__specs li { font-size: .88rem; padding: 2px 8px; border: 1px solid var(--line); border-radius: 4px; }
+.ad__specs li.yes { border-color: var(--ok); color: var(--ok); }
+.ad__specs li.no { color: var(--muted); text-decoration: line-through; }
+.ad__notes { margin-top: 10px !important; max-width: 65ch; }
+.ad__notes:empty { display: none; }
+.ad__dates { margin-top: 10px !important; font-size: .82rem; color: var(--muted); }
+
+.empty { background: var(--surface); padding: 20px 16px; margin: 0; }
+
+.gone { margin: 26px 0 0; }
+.gone summary { cursor: pointer; font-weight: 600; padding: 6px 0; }
+.list--gone .ad { opacity: .6; grid-template-columns: 120px 1fr; }
+.list--gone .ad__img { min-height: 90px; }
+.list--gone .ad__price { font-size: 1.6rem; }
+
+.foot { color: var(--muted); font-size: .9rem; padding-top: 28px; padding-bottom: 40px; }
+.foot p { margin: 0 0 8px; max-width: 70ch; }
+
+@media (max-width: 620px) {
+  .ad, .list--gone .ad { grid-template-columns: 1fr; }
+  .ad__img { aspect-ratio: 3 / 2; min-height: 0; }
+  .list--gone .ad__img { display: none; }
+  .ad__price { font-size: 2.1rem; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .ad.is-new { animation: flash 1.2s ease-out 1; }
+  @keyframes flash { from { border-left-color: var(--surface); } 40% { border-left-color: var(--amber); } }
+}

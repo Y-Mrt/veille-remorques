@@ -1,0 +1,9 @@
+{
+  "name": "Veille remorques porte-voiture",
+  "short_name": "Remorques",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#DDE2E5",
+  "theme_color": "#1C252C",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
