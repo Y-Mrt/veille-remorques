@@ -1,11 +1,8 @@
 name: Compiler l'APK Android
 
+# Lancement manuel uniquement (onglet Actions → Run workflow) : aucune modification
+# poussée sur le dépôt ne peut produire toute seule une nouvelle version de l'app.
 on:
-  push:
-    branches: [main]
-    paths:
-      - "android/**"
-      - ".github/workflows/apk.yml"
   workflow_dispatch:
 
 permissions:
@@ -25,27 +22,38 @@ jobs:
       - name: SDK Android
         run: |
           SDKM="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
-          ls "$ANDROID_HOME"
           yes | "$SDKM" --licenses > /dev/null || true
           "$SDKM" "platforms;android-35" "build-tools;35.0.0" > /dev/null
+
+      - name: Clé de signature
+        env:
+          KS_B64: ${{ secrets.ANDROID_KEYSTORE_B64 }}
+        run: |
+          if [ -z "$KS_B64" ]; then
+            echo "::error::Secrets ANDROID_KEYSTORE_B64 / ANDROID_KEYSTORE_PASSWORD absents (Settings → Secrets and variables → Actions)."
+            exit 1
+          fi
+          echo "$KS_B64" | base64 -d > "$RUNNER_TEMP/veille.p12"
+          echo "ANDROID_KEYSTORE_FILE=$RUNNER_TEMP/veille.p12" >> "$GITHUB_ENV"
 
       - uses: gradle/actions/setup-gradle@v5
         with:
           gradle-version: "8.11.1"
 
       - name: Compiler
+        env:
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
         run: |
           OWNER="${GITHUB_REPOSITORY_OWNER,,}"
           REPO="${GITHUB_REPOSITORY#*/}"
           if [ "$REPO" = "$OWNER.github.io" ]; then SITE="https://$OWNER.github.io/"; else SITE="https://$OWNER.github.io/$REPO/"; fi
-          echo "Adresse du site : $SITE"
           set -o pipefail
           if ! gradle -p android assembleRelease -PsiteUrl="$SITE" --no-daemon 2>&1 | tee build.log; then
-            # Rend les erreurs lisibles dans les annotations du job.
             grep -E "error:|e: |What went wrong|FAILURE|Could not|> " build.log | head -25 | while IFS= read -r l; do echo "::error::$l"; done
             exit 1
           fi
           cp android/app/build/outputs/apk/release/app-release.apk veille-remorques.apk
+          rm -f "$ANDROID_KEYSTORE_FILE"
 
       - name: Publier la version
         uses: softprops/action-gh-release@v2

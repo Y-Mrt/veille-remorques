@@ -122,6 +122,13 @@ def main():
     out_path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"{status} : {data['last_run']['nb_en_ligne']} en ligne, {nouvelles} nouvelle(s)")
 
+    # Même contrôle que celui du workflow de publication : mieux vaut échouer ici
+    # (et corriger run.json) que voir la publication refusée sur GitHub.
+    import subprocess
+    check = subprocess.run([sys.executable, "-I", str(Path(__file__).with_name("validate_annonces.py")), str(out_path)])
+    if check.returncode:
+        sys.exit("Données refusées par validate_annonces.py : corrige run.json puis relance.")
+
 
 if __name__ == "__main__":
     main()

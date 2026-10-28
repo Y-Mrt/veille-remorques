@@ -1,0 +1,39 @@
+name: Publier les données
+
+# La tâche planifiée pousse uniquement sur la branche « donnees ».
+# Ce workflow n'en reprend QUE docs/data/annonces.json, le vérifie avec le script
+# de la branche main (pas celui de « donnees »), puis le copie sur main.
+# Tout autre fichier modifié sur « donnees » est ignoré.
+on:
+  push:
+    branches: [donnees]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publier-donnees
+  cancel-in-progress: false
+
+jobs:
+  publier:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - name: Récupérer et vérifier les annonces
+        run: |
+          git fetch --depth 1 origin donnees
+          git show origin/donnees:docs/data/annonces.json > /tmp/annonces.json
+          python3 -I scripts/validate_annonces.py /tmp/annonces.json
+          cp /tmp/annonces.json docs/data/annonces.json
+
+      - name: Copier sur main
+        run: |
+          if git diff --quiet; then echo "Rien de nouveau"; exit 0; fi
+          git config user.name "veille-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Données : $(git log -1 --format=%s origin/donnees | head -c 100)" docs/data/annonces.json
+          git push origin HEAD:main

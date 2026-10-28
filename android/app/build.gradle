@@ -20,12 +20,16 @@ android {
 
     signingConfigs {
         release {
-            // Clé de signature propre à cette app personnelle : la même clé à chaque
-            // compilation permet d'installer les mises à jour par-dessus l'ancienne version.
-            storeFile file('../keystore/veille.jks')
-            storePassword 'veille-remorques'
-            keyAlias 'veille'
-            keyPassword 'veille-remorques'
+            // La clé n'est jamais dans le dépôt : le workflow la reconstitue à partir
+            // des secrets GitHub ANDROID_KEYSTORE_B64 et ANDROID_KEYSTORE_PASSWORD.
+            def ks = System.getenv('ANDROID_KEYSTORE_FILE')
+            if (ks) {
+                storeFile file(ks)
+                storeType 'PKCS12'
+                storePassword System.getenv('ANDROID_KEYSTORE_PASSWORD')
+                keyAlias 'veille'
+                keyPassword System.getenv('ANDROID_KEYSTORE_PASSWORD')
+            }
         }
     }
 
