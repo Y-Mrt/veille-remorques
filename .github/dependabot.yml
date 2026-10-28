@@ -1,0 +1,12 @@
+version: 2
+updates:
+  # Propose une mise à jour (pull request) quand une action GitHub utilisée sort une nouvelle version.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+  # Idem pour les bibliothèques de l'app Android.
+  - package-ecosystem: gradle
+    directory: /android
+    schedule:
+      interval: monthly
