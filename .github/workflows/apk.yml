@@ -4,6 +4,11 @@ name: Compiler l'APK Android
 # poussée sur le dépôt ne peut produire toute seule une nouvelle version de l'app.
 on:
   workflow_dispatch:
+    inputs:
+      publier:
+        description: "Publier l'APK dans les Releases (décocher pour un simple essai de compilation)"
+        type: boolean
+        default: true
 
 permissions:
   contents: write
@@ -56,6 +61,7 @@ jobs:
           rm -f "$ANDROID_KEYSTORE_FILE"
 
       - name: Publier la version
+        if: inputs.publier
         uses: softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65 # v2
         with:
           tag_name: apk-${{ github.run_number }}

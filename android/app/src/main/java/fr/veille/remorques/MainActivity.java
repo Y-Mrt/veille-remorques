@@ -45,6 +45,11 @@ public class MainActivity extends Activity {
                 Uri uri = request.getUrl();
                 // Le site reste dans l'app ; Leboncoin, GitHub (APK) etc. s'ouvrent à l'extérieur.
                 if (uri.toString().startsWith(BuildConfig.SITE_URL)) return false;
+                // Seuls Leboncoin et GitHub (téléchargement de l'APK) peuvent être ouverts, en https.
+                String host = uri.getHost() == null ? "" : uri.getHost();
+                boolean autorise = "https".equals(uri.getScheme())
+                        && (host.equals("www.leboncoin.fr") || host.equals("github.com"));
+                if (!autorise) return true;
                 try {
                     startActivity(new Intent(Intent.ACTION_VIEW, uri));
                 } catch (ActivityNotFoundException ignored) { }

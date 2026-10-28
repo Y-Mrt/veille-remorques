@@ -18,6 +18,22 @@
     $("#apk").parentElement.hidden = true;
   }
 
+  // Seconde vérification, indépendante de celle faite sur GitHub : seuls les liens
+  // d'annonces Leboncoin en https et les images de img.leboncoin.fr sont utilisés.
+  function safeUrl(u, host) {
+    try {
+      const x = new URL(u);
+      return x.protocol === "https:" && x.hostname === host && !x.username && !x.password ? x.href : null;
+    } catch (e) { return null; }
+  }
+  function clean(list) {
+    return (Array.isArray(list) ? list : []).filter((a) => a && typeof a === "object").map((a) => {
+      const url = safeUrl(a.url, "www.leboncoin.fr");
+      if (!url) return null;
+      return Object.assign({}, a, { url: url, image: safeUrl(a.image, "img.leboncoin.fr") });
+    }).filter(Boolean);
+  }
+
   function parse(d) { const t = d ? new Date(d) : null; return t && !isNaN(t) ? t : null; }
   function isNew(a) { return a.en_ligne !== false && data.last_ok_run_at && a.first_seen === data.last_ok_run_at; }
 
@@ -135,7 +151,12 @@
 
   fetch("data/annonces.json?t=" + Date.now(), { cache: "no-store" })
     .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
-    .then((d) => { data = d; data.annonces = data.annonces || []; renderStatus(); render(); })
+    .then((d) => {
+      data = d && typeof d === "object" ? d : {};
+      data.annonces = clean(data.annonces);
+      data.recommandations = Array.isArray(data.recommandations) ? data.recommandations : [];
+      renderStatus(); render();
+    })
     .catch(() => {
       $("#status").textContent = "Les annonces n'ont pas pu être chargées. Vérifiez la connexion puis rechargez la page.";
       $("#status").classList.add("is-warn");

@@ -2,6 +2,9 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
+  <!-- Le navigateur n'exécute que app.js du site et n'affiche que des images du site ou de Leboncoin. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://img.leboncoin.fr; connect-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Veille remorques</title>
   <meta name="description" content="Remorques porte-voiture ~2,5 t à moins de 2 500 € repérées sur Leboncoin, mises à jour matin et soir.">
