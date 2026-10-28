@@ -31,7 +31,7 @@ jobs:
           ref: main
       - name: Vérifier les annonces
         run: python3 -I scripts/validate_annonces.py docs/data/annonces.json
-      - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
+      - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
       - uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
         with:
           path: docs
