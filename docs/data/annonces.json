@@ -1,8 +1,24 @@
 {
-  "updated_at": null,
-  "last_run": null,
+  "updated_at": "2026-10-28T21:45:00+01:00",
+  "last_run": {
+    "run_at": "2026-10-28T21:45:00+01:00",
+    "run": "soir",
+    "status": "bloque",
+    "message": "Test de la chaîne de publication, aucune recherche effectuée",
+    "nb_en_ligne": 0,
+    "nb_nouvelles": 0
+  },
   "last_ok_run_at": null,
   "recommandations": [],
   "annonces": [],
-  "runs": []
+  "runs": [
+    {
+      "run_at": "2026-10-28T21:45:00+01:00",
+      "run": "soir",
+      "status": "bloque",
+      "message": "Test de la chaîne de publication, aucune recherche effectuée",
+      "nb_en_ligne": 0,
+      "nb_nouvelles": 0
+    }
+  ]
 }
