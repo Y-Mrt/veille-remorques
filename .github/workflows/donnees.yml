@@ -1,10 +1,9 @@
 name: Publier les données
 
-# La tâche planifiée pousse uniquement sur la branche « donnees ».
-# Ce workflow tourne depuis main (planification), jamais depuis « donnees » :
-# un fichier de workflow modifié sur « donnees » n'est donc jamais utilisé ici.
-# Il n'en reprend QUE docs/data/annonces.json, le vérifie avec le script de main,
-# le copie sur main puis redéploie le site. Tout autre fichier de « donnees » est ignoré.
+# La tâche planifiée écrit uniquement dans le dépôt public Y-Mrt/veille-remorques-donnees
+# (l'app GitHub de Claude n'a accès qu'à ce dépôt-là).
+# Ce workflow, qui tourne ici depuis main, n'en reprend QUE annonces.json, le vérifie
+# avec le script de ce dépôt, le copie dans docs/data/ puis redéploie le site.
 on:
   schedule:
     - cron: "*/15 * * * *"
@@ -28,10 +27,12 @@ jobs:
 
       - name: Récupérer et vérifier les annonces
         run: |
-          git fetch --depth 1 origin donnees
-          git show FETCH_HEAD:docs/data/annonces.json > "$RUNNER_TEMP/annonces.json"
-          python3 -I scripts/validate_annonces.py "$RUNNER_TEMP/annonces.json"
-          cp "$RUNNER_TEMP/annonces.json" docs/data/annonces.json
+          git clone --quiet --depth 1 https://github.com/Y-Mrt/veille-remorques-donnees "$RUNNER_TEMP/donnees"
+          python3 -I scripts/validate_annonces.py "$RUNNER_TEMP/donnees/annonces.json"
+          cp "$RUNNER_TEMP/donnees/annonces.json" docs/data/annonces.json
+          # Message du dernier passage, nettoyé (lettres, chiffres, espaces, ponctuation simple).
+          MSG=$(git -C "$RUNNER_TEMP/donnees" log -1 --format=%s | tr -cd '[:alnum:] :/._-' | head -c 80)
+          echo "MSG=$MSG" >> "$GITHUB_ENV"
 
       - name: Copier sur main
         id: copie
@@ -39,7 +40,7 @@ jobs:
           if git diff --quiet; then echo "Rien de nouveau"; echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0; fi
           git config user.name "veille-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Données : $(git log -1 --format=%s FETCH_HEAD | head -c 100)" docs/data/annonces.json
+          git commit -m "Données : $MSG" docs/data/annonces.json
           git push origin HEAD:main
           echo "changed=true" >> "$GITHUB_OUTPUT"
 

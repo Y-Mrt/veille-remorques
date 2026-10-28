@@ -3,13 +3,14 @@
 Annonces Leboncoin de remorques porte-voiture (PTAC ~2,5 t, < 2 500 €, toute la France), vérifiées deux fois par jour (8 h 15 et 19 h 15) par une tâche planifiée Claude.
 
 - `docs/` : le site GitHub Pages. Il lit `docs/data/annonces.json`.
-- `scripts/merge_annonces.py` : la tâche planifiée écrit le résultat d'un passage dans un fichier `run.json`, puis ce script le fusionne dans `docs/data/annonces.json` (date de première détection, annonces retirées, passages bloqués).
+- `scripts/merge_annonces.py` : la tâche planifiée écrit le résultat d'un passage dans un fichier `run.json`, puis ce script le fusionne dans le fichier `annonces.json` du dépôt de données (date de première détection, annonces retirées, passages bloqués).
 - `scripts/validate_annonces.py` : refuse toute donnée inattendue (lien qui n'est pas une annonce Leboncoin en https, image hors `img.leboncoin.fr`, champ inconnu, texte trop long).
 - `android/` : l'application Android. Elle affiche le site et envoie une notification quand une nouvelle annonce apparaît. Elle est compilée par GitHub Actions (`.github/workflows/apk.yml`), **uniquement à la demande**, et publiée dans les *Releases*.
 
 ## Sécurité
 
-- **La tâche planifiée ne pousse que sur la branche `donnees`.** Le workflow « Publier les données » (lancé toutes les 15 minutes depuis `main`, jamais depuis `donnees`) n’en reprend que `docs/data/annonces.json`, le vérifie avec le validateur de `main`, puis le copie sur `main`. Tout autre fichier modifié sur `donnees` est ignoré.
+- **La tâche planifiée n'écrit que dans le dépôt [veille-remorques-donnees](https://github.com/Y-Mrt/veille-remorques-donnees)**, le seul auquel l'app GitHub de Claude a accès : elle ne peut pas modifier ce dépôt-ci (site, app, workflows). Le workflow « Publier les données » (toutes les 15 minutes) n'en reprend que `annonces.json`, le vérifie avec le validateur de ce dépôt, puis le copie dans `docs/data/`.
+- Pour faire évoluer le site ou l'app avec Claude : ajouter temporairement `veille-remorques` dans les dépôts autorisés de l'app GitHub de Claude, puis le retirer une fois le travail fini.
 - Le site est déployé par le workflow « Déployer le site », qui revérifie les données avant chaque mise en ligne.
 - L'APK n'est jamais recompilé automatiquement : une modification du code ne peut pas produire toute seule une nouvelle version de l'app.
 - La clé de signature de l'APK n'est pas dans le dépôt : elle est dans les secrets GitHub `ANDROID_KEYSTORE_B64` (fichier PKCS12 en base64) et `ANDROID_KEYSTORE_PASSWORD`. Garde-en une copie hors de GitHub : sans elle, il faudra désinstaller l'app pour installer une nouvelle version.
