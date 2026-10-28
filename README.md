@@ -9,7 +9,7 @@ Annonces Leboncoin de remorques porte-voiture (PTAC ~2,5 t, < 2 500 €, toute l
 
 ## Sécurité
 
-- **La tâche planifiée ne pousse que sur la branche `donnees`.** Le workflow « Publier les données » n'en reprend que `docs/data/annonces.json`, le vérifie avec le validateur de `main`, puis le copie sur `main`. Tout autre fichier modifié sur `donnees` est ignoré.
+- **La tâche planifiée ne pousse que sur la branche `donnees`.** Le workflow « Publier les données » (lancé toutes les 15 minutes depuis `main`, jamais depuis `donnees`) n’en reprend que `docs/data/annonces.json`, le vérifie avec le validateur de `main`, puis le copie sur `main`. Tout autre fichier modifié sur `donnees` est ignoré.
 - Le site est déployé par le workflow « Déployer le site », qui revérifie les données avant chaque mise en ligne.
 - L'APK n'est jamais recompilé automatiquement : une modification du code ne peut pas produire toute seule une nouvelle version de l'app.
 - La clé de signature de l'APK n'est pas dans le dépôt : elle est dans les secrets GitHub `ANDROID_KEYSTORE_B64` (fichier PKCS12 en base64) et `ANDROID_KEYSTORE_PASSWORD`. Garde-en une copie hors de GitHub : sans elle, il faudra désinstaller l'app pour installer une nouvelle version.

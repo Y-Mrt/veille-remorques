@@ -1,15 +1,14 @@
 name: Publier les données
 
 # La tâche planifiée pousse uniquement sur la branche « donnees ».
-# Ce workflow n'en reprend QUE docs/data/annonces.json, le vérifie avec le script
-# de la branche main (pas celui de « donnees »), puis le copie sur main.
-# Tout autre fichier modifié sur « donnees » est ignoré.
+# Ce workflow tourne depuis main (planification), jamais depuis « donnees » :
+# un fichier de workflow modifié sur « donnees » n'est donc jamais utilisé ici.
+# Il n'en reprend QUE docs/data/annonces.json, le vérifie avec le script de main,
+# le copie sur main puis redéploie le site. Tout autre fichier de « donnees » est ignoré.
 on:
-  push:
-    branches: [donnees]
-
-permissions:
-  contents: write
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
 
 concurrency:
   group: publier-donnees
@@ -18,6 +17,10 @@ concurrency:
 jobs:
   publier:
     runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    outputs:
+      changed: ${{ steps.copie.outputs.changed }}
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
@@ -26,14 +29,25 @@ jobs:
       - name: Récupérer et vérifier les annonces
         run: |
           git fetch --depth 1 origin donnees
-          git show origin/donnees:docs/data/annonces.json > /tmp/annonces.json
-          python3 -I scripts/validate_annonces.py /tmp/annonces.json
-          cp /tmp/annonces.json docs/data/annonces.json
+          git show FETCH_HEAD:docs/data/annonces.json > "$RUNNER_TEMP/annonces.json"
+          python3 -I scripts/validate_annonces.py "$RUNNER_TEMP/annonces.json"
+          cp "$RUNNER_TEMP/annonces.json" docs/data/annonces.json
 
       - name: Copier sur main
+        id: copie
         run: |
-          if git diff --quiet; then echo "Rien de nouveau"; exit 0; fi
+          if git diff --quiet; then echo "Rien de nouveau"; echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0; fi
           git config user.name "veille-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Données : $(git log -1 --format=%s origin/donnees | head -c 100)" docs/data/annonces.json
+          git commit -m "Données : $(git log -1 --format=%s FETCH_HEAD | head -c 100)" docs/data/annonces.json
           git push origin HEAD:main
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+  deployer:
+    needs: publier
+    if: needs.publier.outputs.changed == 'true'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/pages.yml
