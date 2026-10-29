@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-29T19:19:15+01:00",
+  "updated_at": "2026-10-29T19:26:08+01:00",
   "last_run": {
-    "run_at": "2026-10-29T19:19:15+01:00",
+    "run_at": "2026-10-29T19:26:08+01:00",
     "run": "soir",
-    "status": "ok",
-    "message": "Blocage Leboncoin (captcha DataDome) en cours de recherche : annonces connues conservées sans revérification détaillée.",
+    "status": "bloque",
+    "message": "Captcha Leboncoin (DataDome) affiché dès l'ouverture du site : aucune recherche possible.",
     "nb_en_ligne": 39,
     "nb_nouvelles": 0
   },
@@ -866,6 +866,14 @@
     }
   ],
   "runs": [
+    {
+      "run_at": "2026-10-29T19:26:08+01:00",
+      "run": "soir",
+      "status": "bloque",
+      "message": "Captcha Leboncoin (DataDome) affiché dès l'ouverture du site : aucune recherche possible.",
+      "nb_en_ligne": 39,
+      "nb_nouvelles": 0
+    },
     {
       "run_at": "2026-10-29T19:19:15+01:00",
       "run": "soir",
