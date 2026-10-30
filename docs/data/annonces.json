@@ -1,19 +1,15 @@
 {
-  "updated_at": "2026-10-29T19:41:32+01:00",
+  "updated_at": "2026-10-30T17:39:07+01:00",
   "last_run": {
-    "run_at": "2026-10-29T19:41:32+01:00",
-    "run": "soir",
+    "run_at": "2026-10-30T17:39:07+01:00",
+    "run": "matin",
     "status": "ok",
-    "message": "",
-    "nb_en_ligne": 44,
-    "nb_nouvelles": 5
+    "message": "Blocage Leboncoin (captcha) pendant l'ouverture des annonces : seules 312 annonces sur 1699 ont pu être ouvertes en détail.",
+    "nb_en_ligne": 42,
+    "nb_nouvelles": 0
   },
-  "last_ok_run_at": "2026-10-29T19:41:32+01:00",
+  "last_ok_run_at": "2026-10-30T17:39:07+01:00",
   "recommandations": [
-    {
-      "id": "3287639637",
-      "raison": "2,5 t avec carte grise au nom du vendeur, double essieu galva, à environ 175 km : toujours la plus proche et la mieux adaptée."
-    },
     {
       "id": "3274976630",
       "raison": "UFAC 2 t basculant avec treuil électrique, pneus et moyeux neufs, à environ 230 km (Toulouse) et prix négociable."
@@ -36,7 +32,7 @@
       "points": "Plateau acier basculant sur double essieu, plancher tôle et ridelles basses ; usure visible mais structure saine. Pas de treuil ni de rampes visibles sur les 2 photos.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3297704377",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/3c/9c/ee/3c9cee68c2fba97ccd9fbe73996777cf79046a60.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -56,7 +52,7 @@
       "points": "Porte-voiture ancien à rails acier sur double essieu, 2 rampes et roue de secours visibles ; peinture fatiguée, pneus annoncés bons.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3297727476",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/57/9c/6e/579c6e387d9bb1c5d8d554c1ca7567ab7b630fce.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -78,7 +74,7 @@
       "points": "Plateau 4 m x 1,80 m non basculant à double essieu, éclairage LED et treuil manuel ; stocké sous abri, bon aspect général.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3279385096",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/4a/71/86/4a718677a19e4e2c4e00c0a503674a3af9a7d136.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -99,7 +95,7 @@
       "points": "Brian James A4 de 2001, plateau 4,50 x 2,0 m, double essieu, rampes intégrées ; photos en charge avec des voitures anciennes. Attention : pas de carte grise.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3292301108",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/f3/60/45/f360459401e9266c286779f370576c2097f9c9b0.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -120,7 +116,7 @@
       "points": "Porte-voiture galvanisé basculant hydraulique, double essieu, treuil manuel et roue jockey ; une seule photo (plateau rails ajourés).",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3297320072",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/9f/18/2d/9f182d81305ee332b4505e3b0af2ebbc2cbe54f1.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -141,7 +137,7 @@
       "points": "Plateau basculant Ifor Williams en tandem, treuil électrique sous capot et rampes alu ; plancher bois patiné. PTAC non indiqué (plaque Ifor Williams à demander).",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3254556128",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/2a/5d/8b/2a5d8be21ada535800a78309a94c8008a20968bd.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -162,7 +158,7 @@
       "points": "Porte-véhicule à rails sur tandem, rampes arrière et treuil manuel ; stockée dehors dans l'herbe. Négociable, livraison possible.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3261259369",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/46/a1/98/46a198daba9e873993f82ef2ab3198376c4db425.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -182,7 +178,7 @@
       "points": "Porte-voiture alu/acier à rails sur 2 essieux, rampes rabattables. Carte grise et freinage non précisés.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3286773358",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/68/92/ba/6892ba194ff239e4152a3f0590202c531fd42ba3.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -202,7 +198,7 @@
       "points": "Plateau basculant UFAC galvanisé sur tandem, vérin manuel, timon long. Freinage HS à prévoir.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3213706827",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/63/45/6d/63456dc78cdf73cbbf11bc1b373300ab1570841f.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -223,7 +219,7 @@
       "points": "Almeras de 1980, plateau 3,75 x 1,80 m, simple essieu mais PTAC 2000 kg, freins refaits et 2 pneus neufs. Le texte annonce 1 600 €.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3218851124",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/f5/00/bf/f500bfcb8e788519d515c6d8d53f41faca099763.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -244,7 +240,7 @@
       "points": "Modèle Colibri 4,05 x 1,88 m, 2,5 t (500 kg à vide), pneus 16'' renforcés, treuil récent, peinture Raptor. Seuls les câbles de frein sont à revoir.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3284633551",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/9a/78/33/9a7833776811b8df9bc227a7f47da5b56aff7c29.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -266,7 +262,7 @@
       "points": "Porte-voiture galva à rampes, 2 essieux annoncés, 4 pneus neufs, freins neufs. Papiers suisses : démarches d'immatriculation à prévoir.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3289643942",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/c1/44/8a/c1448ad354cb86f799deb7789238ed004dabd8c3.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -285,7 +281,7 @@
       "points": "Grand plateau 4,55 x 1,95 m avec rampes et béquilles arrière, charge utile 2 t annoncée.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3274046880",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/83/0e/21/830e21e1de97c6c2a82739c799c0e3ab3884c5a6.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -304,7 +300,7 @@
       "points": "UFAG de 1974 reconditionnée, PTC 2100 kg, basculante, 2 rails + plancher douglas, plateau 4 x 1,84 m, pneus et jantes neufs.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3163601020",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/38/f9/69/38f969965495b9e485472e28c0e2306d1c602837.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -323,7 +319,7 @@
       "points": "Porte-voiture double essieu, carte grise, pneus en bon état ; roue jockey à remplacer (fournie).",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/2978420253",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/f6/a2/e7/f6a2e736440d44dac8e5dcc915275593b24c8168.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -343,7 +339,7 @@
       "points": "Lider double essieu galvanisé à rampes intégrées, photo avec une Peugeot chargée, roue de secours.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3187095287",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/c8/ae/38/c8ae3814cc8bc65ec38181acab915b134d2df09f.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -363,7 +359,7 @@
       "points": "PTAC 2000 kg, PV 480 kg, treuil mécanique. Goujons, 2 roues et éclairage à refaire (>250 € de pièces). Prix ferme.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3239452786",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/a4/78/c1/a478c19a5e52fa2dcf721e051b679dfadd0a1304.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -384,7 +380,7 @@
       "points": "Plateau basculant hydraulique en tôle, tandem visible, treuil et rampe intégrée, carte grise au nom du vendeur.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3260563931",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/b9/cf/bb/b9cfbb3fdee7e7d3094b9a70a526a1c330923bbf.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -404,7 +400,7 @@
       "points": "Plateau VL 3,50 x 1,75 m sur 2 essieux, 2000 kg, carte grise ; photo de la plaque sur demande.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3279393694",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/80/3e/4f/803e4f55b8d3d63d8036561c3646266a46dd7ec5.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -426,7 +422,7 @@
       "points": "Plateau surbaissé à l'arrière 4,50 x 1,815 m, 2 essieux, PV 580 kg, treuil manuel, rampes, roue jockey auto. Prix ferme.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3289311779",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/1e/ab/9a/1eab9a548c484fb13d9d7f27e6195b059bee7c1b.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -446,7 +442,7 @@
       "points": "Plateau 4 x 2,18 m (1,72 m entre garde-boues), PV 500 kg, freinage neuf, timon récent, électricité neuve.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3293047707",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/7d/82/b5/7d82b59c1331efdbda08e20745d27b5c57884ff6.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -467,7 +463,7 @@
       "points": "Plateau galva perforé à rebords et rampes, treuil manuel ; une photo montre les deux roues en tandem.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3234553714",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/20/99/05/20990557c4deaaf81e9b60c1d1c852f1ee4ec058.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -487,7 +483,7 @@
       "points": "Long porte-voiture 7 m sans flèche à 3 essieux, rampe ; plancher à refaire et révision complète à prévoir.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3278125031",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/11/7e/1b/117e1bef291a3530c56f826063af0995f075ea7f.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -506,7 +502,7 @@
       "points": "Très long plateau 6,20 x 1,90 m ATV, plaque PTAC 2900 kg (au-delà de 3,5 t attelage compris : permis BE probable). Pneus à changer.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3279494599",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/3f/da/13/3fda1320079d1a51a40e828c091b5bb9ad381bf7.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -526,7 +522,7 @@
       "points": "Mecanorem galva 4,05 x 1,95 m, PTAC 2 t, CU 1,4 t, 2 essieux, timon réglable : « vrai plateau de carrossier ».",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3276551889",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/27/87/71/2787711185b96f89df465a5455241d0720f65a57.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -546,7 +542,7 @@
       "points": "UFAC basculant avec cric hydraulique intégré et treuil électrique, CU 1600 kg.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3295705119",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/e2/6c/a9/e26ca947e933d00e3b116dac49077fee4af01569.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -566,7 +562,7 @@
       "points": "AMCA Noval 400 x 190 double essieu, 2 t, carte grise à jour.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3217200969",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/9e/31/d7/9e31d7403306e8cb3baabecd033ce54f04c85c6f.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -587,7 +583,7 @@
       "points": "UFAC basculant, treuil électrique, pneus et moyeux neufs ; seul défaut : rattrapage du frein à inertie à régler. Prix négociable.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3274976630",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/08/6c/53/086c53ad85e74f4e7125e3103c93b888a1b443ca.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -608,7 +604,7 @@
       "points": "Plateau 3,60 x 1,90 m à basculement hydraulique et treuil, PV 530 kg, 2 essieux.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3172203193",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/83/50/d0/8350d057f2b34eca1efc7ec8b20b2a11bde2dcdc.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -628,7 +624,7 @@
       "points": "Porte-voiture Gaubert bleu/gris en tandem, rampes intégrées, plancher bois usé ; plaque constructeur en photo illisible.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3260916133",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/a6/f7/71/a6f77111f16d55682fc3f10ce227e3883159bb4f.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -650,27 +646,7 @@
       "points": "Buton 4 x 1,80 m, châssis galva, double essieu, 5 pneus neufs, plateau et électricité neufs, treuil manuel, rampes sous le plateau.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3266268200",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/8a/2d/c9/8a2dc9246c733453c96eddddb7fc52579932a9ce.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
-      "en_ligne": true
-    },
-    {
-      "id": "3284912835",
-      "first_seen": "2026-10-28T23:54:45+01:00",
-      "titre": "Remorque porte voiture Lider",
-      "prix": 2500,
-      "ville": "Belley",
-      "departement": "01",
-      "distance_km": 530,
-      "date_publication": "2026-10-09T09:16:27+02:00",
-      "ptac_kg": 2500,
-      "ptac_source": "PTAC indiqué dans l'annonce",
-      "essieux": 2,
-      "carte_grise": "oui, au nom du vendeur",
-      "etat": "bon",
-      "points": "Lider deux essieux 2,5 t, carte grise au nom du vendeur ; annonce très succincte.",
-      "url": "https://www.leboncoin.fr/ad/equipement_auto/3284912835",
-      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/99/5f/6b/995f6b5f90e4f90098c9ce95dd16266d41e99096.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -690,7 +666,7 @@
       "points": "Magnum 4 x 2 m, CU 1500 kg, rampe intégrée, 4 pneus neufs + roue de secours.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3285457208",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/b1/69/e3/b169e31a276c4c8c444f3484f6959a11e9cdbb9a.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -713,7 +689,7 @@
       "points": "Porte-voiture basculant double essieu, freiné, treuil manuel, rampes intégrées, 4 pneus neufs, carte grise.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3289194637",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/f5/47/88/f547884dcbaaa1f071c15c42e2500a44905b961d.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -734,7 +710,7 @@
       "points": "Plateau basculant hydraulique (pompe manuelle), PTAC 2000 kg, CU ≈ 1600 kg, simple essieu freiné à inertie, roue de secours.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3293234733",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/6b/4b/2b/6b4b2b5d1fe0df995ddde3789d75058790a42e86.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -756,7 +732,7 @@
       "points": "Porte-voiture freiné en tandem, peinture neuve, treuil fourni mais non monté ; 4 pneus vieux à remplacer.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3284780694",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/48/22/30/482230ce661d21fb038c90169afd79d70fa59e3c.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -778,7 +754,7 @@
       "points": "Plateau porte-véhicule en tandem (photo avec un buggy chargé), freins, treuil et rampes intégrées ; « rien à prévoir ».",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3290853195",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/89/ba/31/89ba31644614691722312b8b9b830906ff97a128.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -798,7 +774,7 @@
       "points": "Porte-voiture galva de 2018 en tandem, rampes alu longues ; peu d'infos dans l'annonce.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3295720608",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/f7/d7/1a/f7d71aa53fa5d62acefc28cb8fb8bcd04ec1e66e.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -818,7 +794,7 @@
       "points": "Grand plateau tôle striée d'environ 4 x 2 m sur 2 essieux, treuil manuel sur le timon. Cadre galva bien rouillé, pas de rampes visibles ; freinage et carte grise non précisés.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3296994041",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/30/b7/30/30b73031af73b96199ef4bccc02d32123e2411be.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -839,7 +815,7 @@
       "points": "Très grand plateau basculant Berry France 6,30 x 2,40 m, 2 essieux visibles, treuil. Peinture orange fatiguée, stocké dans l'herbe.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3296685394",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/5b/fc/2c/5bfc2cd816c858a75c5b605c0ad35b4a84da12e6.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -859,7 +835,7 @@
       "points": "Porte-voiture à rails galvanisé, tandem bien visible, plateau basculant à pompe, treuil électrique sur batterie et coffre de rangement. Aspect propre.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3296469943",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/08/c2/fc/08c2fc219cade3307158078ddd47f124b0fd5cbc.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -879,7 +855,7 @@
       "points": "Plateau acier vert et blanc 4,20 x 1,85 m, treuil électrique amovible 2,5 t, essieux remplacés. Seulement 2 photos, nombre d'essieux non visible.",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3294635090",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/47/b7/8d/47b78d52315edd3112e37f37e7c74760c1c3a0c5.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
@@ -900,28 +876,29 @@
       "points": "Plateau Saris 400 x 200 de 2003, 2 essieux, plancher neuf, rampes avec logement, roue jockey automatique. Vendu par un professionnel (Morvan Remorques).",
       "url": "https://www.leboncoin.fr/ad/equipement_auto/3292975972",
       "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/06/1a/c0/061ac063d2425ec9deab1bfaf32546f5486354ef.jpg?rule=ad-large",
-      "last_seen": "2026-10-29T19:41:32+01:00",
+      "last_seen": "2026-10-30T17:39:07+01:00",
       "en_ligne": true
     },
     {
-      "id": "3287639637",
-      "first_seen": "2026-10-28T22:10:00+01:00",
-      "titre": "Remorque double essieu",
+      "id": "3284912835",
+      "first_seen": "2026-10-28T23:54:45+01:00",
+      "titre": "Remorque porte voiture Lider",
       "prix": 2500,
-      "ville": "Flavignac",
-      "departement": "87",
-      "distance_km": 175,
-      "date_publication": "2026-10-13T13:42:04+02:00",
+      "ville": "Belley",
+      "departement": "01",
+      "distance_km": 530,
+      "date_publication": "2026-10-09T09:16:27+02:00",
       "ptac_kg": 2500,
-      "ptac_source": "PTAC 2t5 indiqué dans l'annonce",
+      "ptac_source": "PTAC indiqué dans l'annonce",
       "essieux": 2,
       "carte_grise": "oui, au nom du vendeur",
-      "etat": "superbe état selon le vendeur",
-      "points": "Acma Nova galvanisée 3,50 x 1,80 m sans passage de roue, ridelles démontables pour la passer en plateau (transportait un Defender). Pas de rampes visibles sur l'unique photo.",
-      "url": "https://www.leboncoin.fr/ad/equipement_auto/3287639637",
-      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/75/02/46/7502463de8c5287d01e5c4e279170ed174d49a8a.jpg?rule=ad-large",
+      "etat": "bon",
+      "points": "Lider deux essieux 2,5 t, carte grise au nom du vendeur ; annonce très succincte.",
+      "url": "https://www.leboncoin.fr/ad/equipement_auto/3284912835",
+      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/99/5f/6b/995f6b5f90e4f90098c9ce95dd16266d41e99096.jpg?rule=ad-large",
       "last_seen": "2026-10-29T19:41:32+01:00",
-      "en_ligne": true
+      "en_ligne": false,
+      "retiree_le": "2026-10-30T17:39:07+01:00"
     },
     {
       "id": "3296710168",
@@ -943,6 +920,27 @@
       "last_seen": "2026-10-28T23:54:45+01:00",
       "en_ligne": false,
       "retiree_le": "2026-10-29T14:03:35+01:00"
+    },
+    {
+      "id": "3287639637",
+      "first_seen": "2026-10-28T22:10:00+01:00",
+      "titre": "Remorque double essieu",
+      "prix": 2500,
+      "ville": "Flavignac",
+      "departement": "87",
+      "distance_km": 175,
+      "date_publication": "2026-10-13T13:42:04+02:00",
+      "ptac_kg": 2500,
+      "ptac_source": "PTAC 2t5 indiqué dans l'annonce",
+      "essieux": 2,
+      "carte_grise": "oui, au nom du vendeur",
+      "etat": "superbe état selon le vendeur",
+      "points": "Acma Nova galvanisée 3,50 x 1,80 m sans passage de roue, ridelles démontables pour la passer en plateau (transportait un Defender). Pas de rampes visibles sur l'unique photo.",
+      "url": "https://www.leboncoin.fr/ad/equipement_auto/3287639637",
+      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/75/02/46/7502463de8c5287d01e5c4e279170ed174d49a8a.jpg?rule=ad-large",
+      "last_seen": "2026-10-29T19:41:32+01:00",
+      "en_ligne": false,
+      "retiree_le": "2026-10-30T17:39:07+01:00"
     },
     {
       "id": "3297283135",
@@ -969,6 +967,14 @@
     }
   ],
   "runs": [
+    {
+      "run_at": "2026-10-30T17:39:07+01:00",
+      "run": "matin",
+      "status": "ok",
+      "message": "Blocage Leboncoin (captcha) pendant l'ouverture des annonces : seules 312 annonces sur 1699 ont pu être ouvertes en détail.",
+      "nb_en_ligne": 42,
+      "nb_nouvelles": 0
+    },
     {
       "run_at": "2026-10-29T19:41:32+01:00",
       "run": "soir",
